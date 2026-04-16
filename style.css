@@ -41,11 +41,11 @@ body, html {
 }
 
 .info-panel h2 {
-    margin: 5px 0 15px 0; /* Margem ajustada */
+    margin: 5px 0 15px 0;
     font-weight: 300;
 }
 
-/* NOVO: Estilos do Painel de Configuração */
+/* Painel de Configuração */
 .config-panel {
     width: 100%;
     margin-bottom: 15px;
@@ -115,17 +115,23 @@ body, html {
     cursor: pointer;
     transition: background-color 0.3s;
     margin-top: auto;
+    width: 100%;
 }
 #reset-button:hover { background-color: #357ABD; }
 
-/* Tabuleiro do Jogo (Direita) */
+/* Rodapé */
+.footer-credit {
+    margin-top: 15px;
+    font-size: 0.9em;
+    color: #888;
+    font-weight: bold;
+}
+
+/* Tabuleiro do Jogo */
 .game-board {
     flex: 2;
     padding: 20px;
     display: grid;
-    /* REMOVIDO: grid-template-columns e grid-template-rows
-       O JavaScript vai definir isso dinamicamente.
-    */
     gap: 15px;
     height: 100%;
 }
@@ -140,10 +146,7 @@ body, html {
     display: flex;
     align-items: center;
     justify-content: center;
-    
-    /* ATUALIZADO: Fonte responsiva para caber em grids menores */
     font-size: clamp(1.2em, 4vw, 2.5em); 
-    
     font-weight: bold;
     color: #333;
     transition: transform 0.5s, background-color 0.3s;
@@ -156,3 +159,50 @@ body, html {
 .card.flipped .card-content { display: block; }
 .card.matched { background-color: #a0d4a0; border-color: #6a9c6a; cursor: default; opacity: 0.8; }
 .card .card-content { backface-visibility: hidden; position: absolute; }
+
+/* Modal de Fim de Jogo */
+#game-over-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    max-width: 500px;
+    width: 90%;
+    box-shadow: 0 5px 30px rgba(0,0,0,0.3);
+    animation: slideIn 0.4s ease-out;
+}
+
+@keyframes slideIn {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.modal-content h2 { color: #4a90e2; font-size: 2.5em; margin-top: 0; }
+.modal-content p { font-size: 1.2em; margin: 10px 0; }
+.result-message { font-size: 1.5em; font-weight: bold; color: #d9534f; margin: 20px 0; }
+
+.modal-button {
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+.modal-button:hover { background-color: #357ABD; }

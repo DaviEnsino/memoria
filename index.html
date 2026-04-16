@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jogo da Memória: Potências</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
 
@@ -43,19 +44,24 @@
                 <div class="player-score" id="player-2-score">
                     <strong>Jogador 2:</strong> <span class="score">0</span>
                 </div>
-                <div class="player-score" id="player-3-score">
-                    <strong>Jogador 3:</strong> <span class="score">0</span>
-                </div>
-                <div class="player-score" id="player-4-score">
-                    <strong>Jogador 4:</strong> <span class="score">0</span>
-                </div>
             </div>
 
             <button id="reset-button">Reiniciar Jogo</button>
+            <div class="footer-credit">@daviensino</div>
         </div>
 
         <div class="game-board" id="game-board">
-            </div>
+        </div>
+    </div>
+
+    <!-- Tela de Resultado (Modal) -->
+    <div id="game-over-modal">
+        <div class="modal-content">
+            <h2>Fim de Jogo!</h2>
+            <div id="result-message" class="result-message"></div>
+            <p id="final-stats"></p>
+            <button class="modal-button" id="modal-reset-button">Jogar Novamente</button>
+        </div>
     </div>
 
     <script src="script.js"></script>
