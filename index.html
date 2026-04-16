@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Memória: Potências</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="game-container">
+        <div class="info-panel">
+            <h1>Jogo da Memória</h1>
+            <h2>Potências</h2>
+
+            <div class="config-panel">
+                <label for="grid-size-select">Tamanho do Jogo:</label>
+                <select id="grid-size-select">
+                    <option value="4x3">Pequeno (4x3)</option>
+                    <option value="4x4">Médio (4x4)</option>
+                    <option value="5x4">Grande (5x4)</option>
+                </select>
+            </div>
+
+            <h2 id="player-turn">Vez do Jogador: <span id="current-player">1</span></h2>
+            
+            <div class="stats">
+                <div class="stat-item">
+                    <h3>Movimentos Totais</h3>
+                    <span id="total-moves">0</span>
+                </div>
+                <div class="stat-item">
+                    <h3>Pares Encontrados</h3>
+                    <span id="total-matches">0</span> / <span id="total-pairs">6</span>
+                </div>
+            </div>
+
+            <div class="scoreboard">
+                <h3>Pontuação</h3>
+                <div class="player-score active" id="player-1-score">
+                    <strong>Jogador 1:</strong> <span class="score">0</span>
+                </div>
+                <div class="player-score" id="player-2-score">
+                    <strong>Jogador 2:</strong> <span class="score">0</span>
+                </div>
+                <div class="player-score" id="player-3-score">
+                    <strong>Jogador 3:</strong> <span class="score">0</span>
+                </div>
+                <div class="player-score" id="player-4-score">
+                    <strong>Jogador 4:</strong> <span class="score">0</span>
+                </div>
+            </div>
+
+            <button id="reset-button">Reiniciar Jogo</button>
+        </div>
+
+        <div class="game-board" id="game-board">
+            </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
